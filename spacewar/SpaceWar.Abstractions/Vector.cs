@@ -5,7 +5,7 @@ public class Vector : IEnumerable<int>
 {
     private readonly int[] _coordinates;
 
-    public Vector(int[] coordinates)
+    public Vector(params int[] coordinates)
     {
         _coordinates = coordinates?.ToArray() ?? throw new ArgumentNullException(nameof(coordinates));
 
