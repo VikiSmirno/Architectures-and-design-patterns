@@ -11,13 +11,13 @@ public class Vector : IEnumerable<int>
 
         if (_coordinates.Length == 0) throw new ArgumentException("Vector cannot be empty");
     }
-    public int Dimention => _coordinates.Length;
+    public int Dimension => _coordinates.Length;
     public int this[int index] => _coordinates[index];
     public IEnumerator<int> GetEnumerator() => (_coordinates as IEnumerable<int>).GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     public static Vector operator +(Vector x, Vector y)
     {
-        if (x.Dimention != y.Dimention) throw new ArgumentException("Vectors must have same dimensions");
+        if (x.Dimension != y.Dimension) throw new ArgumentException("Vectors must have same dimensions");
 
         return new Vector(x._coordinates.Zip(y._coordinates, (a, b) => a + b).ToArray());
     }
