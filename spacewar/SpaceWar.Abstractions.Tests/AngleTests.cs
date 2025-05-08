@@ -46,6 +46,16 @@ public class AngleTests
     }
 
     [Fact]
+    public void OperatorDoubleEqual_CompareAngleWithNull_False()
+    {
+        var angle = new Angle(30);
+        Angle? nullable = null;
+
+        Assert.False(angle == nullable!);
+        Assert.False(nullable! == angle);
+    }
+
+    [Fact]
     public void OperatorNotEqual_CompareAngles_NotEqualAngles()
     {
         var angle1 = new Angle(30);
@@ -61,6 +71,24 @@ public class AngleTests
 
         Assert.True(angle1.Equals(angle2));
     }
+    [Fact]
+    public void Equals_CompareAngleWithNull_False()
+    {
+        var angle1 = new Angle(30);
+        Angle? nullable = null;
+
+        Assert.False(angle1.Equals(nullable));
+    }
+
+    [Fact]
+    public void Equals_CompareAngleWithOtherObject_False()
+    {
+        var angle = new Angle(30);
+        var vector = new Vector(30);
+
+        Assert.False(angle.Equals(vector));
+    }
+
     [Fact]
     public void GetHashCode_CompareAngles_Correctly()
     {
