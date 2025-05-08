@@ -52,6 +52,15 @@ public class VectorTests
     }
 
     [Fact]
+    public void OperatorDoubleEqual_CompareVectorWithItself_True()
+    {
+        var vector = new Vector(1, 1);
+
+#pragma warning disable CS1718
+        Assert.True(vector == vector);
+    }
+
+    [Fact]
     public void OperatorDoubleEqual_CompareVectorWithNull_ReturnFalse()
     {
         var vector1 = new Vector(1, 1);
@@ -68,14 +77,25 @@ public class VectorTests
 
         Assert.True(vector1 != vector2);
     }
+
     [Fact]
-    public void Equals_CompareVectors_Correctly()
+    public void Equals_CompareVectors_True()
     {
         var vector1 = new Vector(1, 1);
         var vector2 = new Vector(1, 1);
 
         Assert.True(vector1.Equals(vector2));
     }
+
+    [Fact]
+    public void Equals_CompareVectorWithOtherObject_False()
+    {
+        var vector = new Vector(1);
+        var angle = new Angle(1);
+
+        Assert.False(vector.Equals(angle));
+    }
+
     [Fact]
     public void GetHashCode_CompareVectors_Correctly()
     {
