@@ -5,7 +5,7 @@ public class MoveCommand : ICommand
     private readonly IMovable _movable;
     public MoveCommand(IMovable movable)
     {
-        _movable = movable;
+        _movable = movable ?? throw new ArgumentNullException(nameof(movable)); ;
     }
     public void Execute()
     {
