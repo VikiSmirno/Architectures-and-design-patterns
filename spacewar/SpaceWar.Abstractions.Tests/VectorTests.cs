@@ -63,10 +63,11 @@ public class VectorTests
     [Fact]
     public void OperatorDoubleEqual_CompareVectorWithNull_ReturnFalse()
     {
-        var vector1 = new Vector(1, 1);
-        Vector? vector2 = null;
+        var vector = new Vector(1, 1);
+        Vector? nullable = null;
 
-        Assert.False(vector1 == vector2!);
+        Assert.False(vector == nullable!);
+        Assert.False(nullable! == vector);
     }
 
     [Fact]

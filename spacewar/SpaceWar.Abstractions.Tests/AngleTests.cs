@@ -15,6 +15,7 @@ public class AngleTests
         Angle? nullAngle = null;
 
         Assert.Throws<ArgumentNullException>(() => x + nullAngle!);
+        Assert.Throws<ArgumentNullException>(() => nullAngle! + x);
     }
 
     [Fact]
