@@ -1,7 +1,7 @@
 using System.Collections;
 namespace SpaceWar.Abstractions;
 
-public class Vector : IEnumerable<int>
+public class Vector
 {
     private readonly int[] _coordinates;
 
@@ -13,8 +13,7 @@ public class Vector : IEnumerable<int>
     }
     public int Dimension => _coordinates.Length;
     public int this[int index] => _coordinates[index];
-    public IEnumerator<int> GetEnumerator() => (_coordinates as IEnumerable<int>).GetEnumerator();
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
     public static Vector operator +(Vector x, Vector y)
     {
         if (x.Dimension != y.Dimension) throw new ArgumentException("Vectors must have same dimensions");
