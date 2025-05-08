@@ -6,6 +6,12 @@ namespace SpaceWar.Abstractions.Tests;
 public class RotateCommandTests
 {
     [Fact]
+    public void Constructor_NullRotatable_ThrowsArgumentNullException()
+    {
+        Assert.Throws<ArgumentNullException>(() => new RotateCommand(null!));
+    }
+
+    [Fact]
     public void Execute_UpdatesCurrentAngle_Correctly()
     {
         var rotatable = new Mock<IRotatable>();
