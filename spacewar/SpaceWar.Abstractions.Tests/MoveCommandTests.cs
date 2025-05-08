@@ -5,6 +5,12 @@ namespace SpaceWar.Abstractions.Tests;
 public class MoveCommandTests
 {
     [Fact]
+    public void Constructor_NullRotatable_ThrowsArgumentNullException()
+    {
+        Assert.Throws<ArgumentNullException>(() => new MoveCommand(null!));
+    }
+
+    [Fact]
     public void Execute_UpdatesPosition_Correctly()
     {
         var movable = new Mock<IMovable>();
