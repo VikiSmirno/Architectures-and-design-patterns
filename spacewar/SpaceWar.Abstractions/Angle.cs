@@ -1,4 +1,4 @@
-namespace SpaceWar.Abstractions;
+﻿namespace SpaceWar.Abstractions;
 
 public class Angle
 {

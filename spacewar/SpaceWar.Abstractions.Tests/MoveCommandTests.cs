@@ -57,4 +57,3 @@ public class MoveCommandTests
         Assert.Throws<InvalidOperationException>(() => moveCommand.Execute());
     }
 }
-

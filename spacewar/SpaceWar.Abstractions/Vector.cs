@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 namespace SpaceWar.Abstractions;
 
 public class Vector

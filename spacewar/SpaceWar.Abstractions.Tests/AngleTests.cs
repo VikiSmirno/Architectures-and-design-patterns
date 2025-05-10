@@ -1,4 +1,4 @@
-namespace SpaceWar.Abstractions.Tests;
+﻿namespace SpaceWar.Abstractions.Tests;
 
 public class AngleTests
 {
