@@ -1,0 +1,15 @@
+﻿namespace SpaceWar.Abstractions;
+
+public class RotateCommand : ICommand
+{
+    private readonly IRotatable _rotatable;
+    public RotateCommand(IRotatable rotatable)
+    {
+        _rotatable = rotatable ?? throw new ArgumentNullException(nameof(rotatable)); ;
+    }
+    public void Execute()
+    {
+        _rotatable.CurrentAngle += _rotatable.RotationStep;
+    }
+
+}
