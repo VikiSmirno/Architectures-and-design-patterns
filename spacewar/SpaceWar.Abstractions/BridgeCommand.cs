@@ -7,9 +7,9 @@ public class BridgeCommand : ICommand, IInjectableCommand
     {
         internalCommand = command;
     }
-    public void Inject(ICommand other)
+    public void Inject(ICommand obj)
     {
-        internalCommand = other;
+        internalCommand = obj;
     }
     public void Execute()
     {
