@@ -13,6 +13,7 @@ public class StartCommand : ICommand
     {
         var actionType = (string)_cmdStartable.properties["action"];
         var handler = IoC.Resolve<IOperationHandler>($"Operation.Handler.{actionType}");
-        handler.Handle(_cmdStartable);
+        var cmd = handler.Handle(_cmdStartable);
+        _cmdStartable.Queue.Add(cmd);
     }
 }
