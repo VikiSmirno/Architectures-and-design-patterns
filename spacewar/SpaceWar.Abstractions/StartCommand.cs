@@ -11,7 +11,7 @@ public class StartCommand : ICommand
     }
     public void Execute()
     {
-        var actionType = (string)_cmdStartable.properties["action"];
+        var actionType = (string)_cmdStartable.Properties["action"];
         var handler = IoC.Resolve<IOperationHandler>($"Operation.Handler.{actionType}");
         var cmd = handler.Handle(_cmdStartable);
         _cmdStartable.Queue.Add(cmd);
